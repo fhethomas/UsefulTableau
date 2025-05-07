@@ -13,3 +13,13 @@ Ignores a dimension when calculating, so in the below you could have a table wit
 ```
 {Exclude [Region] : Sum([Headcount])}
 ```
+
+# Check if a Filter is applied
+The below checks if the Department filter has been used or all departments are present
+```
+IF ATTR({FIXED:COUNTD([Department])}) = COUNTD([Department]) THEN
+    TRUE
+ELSE
+    FALSE
+END
+```
